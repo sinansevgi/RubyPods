@@ -25,7 +25,7 @@ begin
   when '1'
     system('clear')
     loop do
-      puts 's - See available podcats'
+      puts 's - See available podcasts'
       puts 'a - Add new podcast'
       puts 'd - Delete podcast'
       puts 'q - Quit'
@@ -46,20 +46,26 @@ begin
         podcast_list.remove_pod(url)
         next
       else
-        break
+        puts "Invalid Input"
       end
       break if input_opt == 'q'
     end
   when '2'
-    bar = ProgressBar.new
+    bar = ProgressBar.new(podcast_list.pod_links.length)
+    system('clear')
+    puts "How many results would you like to fetch from each podcast ? (Default #2)"
+    len = gets.chomp
+    len = 2 if len.nil? || len == ""
+    len = len.to_i
     system('clear')
     puts "Please wait while your results getting created."
     podcast_list.pod_links.each do |podcast|
       bar.increment!
       podder = Feed.new(podcast)
       page_create = Pager.new(podder.title, podder.pod_image, podder.result_titles, podder.result_links)
-      page_create.page_update
+      page_create.page_update(len)
     end
+    system('clear')
     puts "Your results created in result.html file."
     puts "Please open results.html with your browser."
     end

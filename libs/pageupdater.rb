@@ -2,7 +2,7 @@ require 'nokogiri'
 
 class Pager
   def initialize(pod_title, pod_image, result_titles, result_links)
-    @doc = File.open('../results.html') { |f| Nokogiri::HTML(f) }
+    @doc = File.open('./results.html') { |f| Nokogiri::HTML(f) }
     @pod_title = pod_title
     @pod_image = pod_image
     @result_titles = result_titles
@@ -42,7 +42,7 @@ class Pager
     @block
   end
 
-  def page_update
+  def page_update(len = 2)
     update_time = @doc.at_css '.up'
     update_time.content = 'Last Update: ' + Time.now.strftime('%d/%m/%Y %H:%M')
     main = @doc.at_css '.results'
@@ -54,11 +54,11 @@ class Pager
     section_heading.set_attribute('class', 'mt-5')
     section.set_attribute('class', pod_tag)
     section.add_child(section_heading)
-    2.times do |index|
+    len.times do |index|
       section.add_child(block_nester(@result_links[index], @result_titles[index]))
     end
     main.add_child(section)
     result_page = @doc.to_html
-    File.write('../results.html', result_page)
+    File.write('./results.html', result_page)
   end
 end
