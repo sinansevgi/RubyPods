@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>Ruby Rogues</title>
+    <image>
+      <link>http://rubyrogues.com</link>
+      <url>https://s3.amazonaws.com/devchat.tv/ruby-rogues-thumb.jpg</url>
+      <title>Ruby Rogues</title>
+    </image>
+    <item>
+      <title>RUBY 476: SQL, Arel and the Dark Side of ActiveRecord with Eric Hayes</title>
+      <enclosure url="https://media.devchat.tv/ruby-rogues/RR_476_SQL_Arel_and_the_Dark_Side_of_ActiveRecord_with_Eric_Hayes.mp3" length="76095972" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>RR 475: Succeeding to Your Next CodingPhase with Joe Santos Garcia</title>
+      <enclosure url="https://media.devchat.tv/ruby-rogues/RR_475_Succeeding_to_Your_Next_CodingPhase_with_Joe_Santos_Garcia.mp3" length="79681016" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>RR 474: React on Rails V12 - Don't Shave That Yak! with Justin Gordon</title>
+      <enclosure url="https://media.devchat.tv/ruby-rogues/RR_474_Justin_Gordon.mp3" length="87790947" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>RR 473: GraphQL Doesn't Need To Be Hell with Dmitry Tsepelev</title>
+      <enclosure url="https://media.devchat.tv/ruby-rogues/RR_473_Dmitry_Tsepelev.mp3" length="60226018" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>RR 472: Inertia.js - The Modern Monolith with Jonathan Reinink</title>
+      <enclosure url="https://media.devchat.tv/ruby-rogues/RR_472_Inertia_js_The_Modern_Monolith_with_Jonathan_Reinink.mp3" length="80835624" type="audio/mpeg"/>
+    </item>
+        <item>
+          <title>RUBY 476: SQL, Arel and the Dark Side of ActiveRecord with Eric Hayes</title>
+          <enclosure url="https://media.devchat.tv/ruby-rogues/RR_476_SQL_Arel_and_the_Dark_Side_of_ActiveRecord_with_Eric_Hayes.mp3" length="76095972" type="audio/mpeg"/>
+        </item>
+        <item>
+          <title>RR 475: Succeeding to Your Next CodingPhase with Joe Santos Garcia</title>
+          <enclosure url="https://media.devchat.tv/ruby-rogues/RR_475_Succeeding_to_Your_Next_CodingPhase_with_Joe_Santos_Garcia.mp3" length="79681016" type="audio/mpeg"/>
+        </item>
+        <item>
+          <title>RR 474: React on Rails V12 - Don't Shave That Yak! with Justin Gordon</title>
+          <enclosure url="https://media.devchat.tv/ruby-rogues/RR_474_Justin_Gordon.mp3" length="87790947" type="audio/mpeg"/>
+        </item>
+        <item>
+          <title>RR 473: GraphQL Doesn't Need To Be Hell with Dmitry Tsepelev</title>
+          <enclosure url="https://media.devchat.tv/ruby-rogues/RR_473_Dmitry_Tsepelev.mp3" length="60226018" type="audio/mpeg"/>
+        </item>
+        <item>
+          <title>RR 472: Inertia.js - The Modern Monolith with Jonathan Reinink</title>
+          <enclosure url="https://media.devchat.tv/ruby-rogues/RR_472_Inertia_js_The_Modern_Monolith_with_Jonathan_Reinink.mp3" length="80835624" type="audio/mpeg"/>
+        </item>
+  </channel>
+</rss>

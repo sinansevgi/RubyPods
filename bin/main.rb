@@ -83,6 +83,7 @@ begin
     puts "Please open results.html with your browser."
     break
   when 'q' then  break
+  else puts 'Please enter valid option'
   end
   end
 rescue StandardError

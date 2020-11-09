@@ -1,5 +1,6 @@
 require 'nokogiri'
 
+# noinspection RubyTooManyInstanceVariablesInspection
 class Pager
   def initialize(pod_title, pod_image, result_titles, result_links)
     @doc = File.open('./results.html') { |f| Nokogiri::HTML(f) }
@@ -44,7 +45,7 @@ class Pager
 
   def page_update(len = 2)
     update_time = @doc.at_css '.up'
-    update_time.content = 'You can update results with running main.rb => ' + 'Last Update: ' + Time.now.strftime('%d/%m/%Y %H:%M')
+    update_time.content = 'Please run main.rb for update => ' + 'Last Update: ' + Time.now.strftime('%d/%m/%Y %H:%M')
     main = @doc.at_css '.results'
     pod_tag = @pod_title.split(' ').join('-')
     @doc.at_css('.' + pod_tag)&.remove
