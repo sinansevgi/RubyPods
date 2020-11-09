@@ -2,58 +2,51 @@
 
 # Project Name
 
-> One paragraph statement about the project.
+> This is an application that fetches the latest podcasts feeds
+>  from the web and creates an HTML file for listening to them.
 
-![screenshot](./app_screenshot.png)
-
-Additional description about the project and its features.
+![screenshot](./assets/images/screen.gif)
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby
+- Bootstrap
+- Nokogiri Gem
+- open-uri Gem
+- progress_bar Gem
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://repl.it/@sinansevgi/RubyPods)
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+- Download [this](https://github.com/sinansevgi/RubyPods/archive/feauture_branch.zip) repository. 
+- Extract contents of the zip file.
 
 ### Setup
-
-### Install
+- Open terminal in project directory.
+- If it's not installed, install Bundler ruby gem. (`gem install bundler`)
+- Run `bundle install` in project main directory.
 
 ### Usage
+- After all gems installed, run `ruby ./bin/main.rb`.
+- Open results.html with your browser.
 
 ### Run tests
-
-### Deployment
-
-
+- Run `rspec --format doc` in  project main directory.
 
 ## Authors
 
-👤 **Author1**
+👤 **Sinan Sevgi**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
+- GitHub: [@sinansevgi](https://github.com/sinansevgi)
+- LinkedIn: [@sinansevgi](https://www.linkedin.com/in/sinan-s-52559437/)
+- Twitter: [@nativeofcybers1](https://twitter.com/nativeofcybers1)
 
 ## 🤝 Contributing
 
@@ -73,4 +66,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](lic.url) licensed.
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.

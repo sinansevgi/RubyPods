@@ -3,7 +3,7 @@ require 'nokogiri'
 class Pods
   attr_accessor :pod_links
   def initialize
-    @pod_list = File.open('./assets/pods.xml') { |f| Nokogiri::XML(f) }
+    @pod_list = File.open('../assets/pods.xml') { |f| Nokogiri::XML(f) }
     @pod_links = @pod_list.css('link')
   end
 
