@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'nokogiri'
 require 'open-uri'
 
@@ -13,6 +11,7 @@ class Feed
     @title = @url.css('title')[0].text
     @cast_list = @url.css('enclosure')
     @pod_image = @url.css('image').css('url').text
+    @pod_image = @url.xpath("//itunes:image")[0].attributes['href'].value if @pod_image == ''
     fetch_titles
     fetch_links
   end
@@ -35,5 +34,4 @@ class Feed
       break if result_links.length == 10
     end
   end
-
 end
