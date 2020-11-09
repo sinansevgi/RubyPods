@@ -1,28 +1,38 @@
+#!/usr/bin/env ruby
 require_relative '../libs/podscraper'
 require_relative '../libs/podlist'
 require_relative '../libs/pageupdater'
 require 'progress_bar'
 
 system('clear')
-puts '██████╗ ██╗   ██╗██████╗ ██╗   ██╗    ██████╗  ██████╗ ██████╗  ██████╗ █████╗ ███████╗████████╗███████╗'
-puts '██╔══██╗██║   ██║██╔══██╗╚██╗ ██╔╝    ██╔══██╗██╔═══██╗██╔══██╗██╔════╝██╔══██╗██╔════╝╚══██╔══╝██╔════╝'
-puts '██████╔╝██║   ██║██████╔╝ ╚████╔╝     ██████╔╝██║   ██║██║  ██║██║     ███████║███████╗   ██║   ███████╗'
-puts '██╔══██╗██║   ██║██╔══██╗  ╚██╔╝      ██╔═══╝ ██║   ██║██║  ██║██║     ██╔══██║╚════██║   ██║   ╚════██║'
-puts '██║  ██║╚██████╔╝██████╔╝   ██║       ██║     ╚██████╔╝██████╔╝╚██████╗██║  ██║███████║   ██║   ███████║'
-puts '╚═╝  ╚═╝ ╚═════╝ ╚═════╝    ╚═╝       ╚═╝      ╚═════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚══════╝'
-puts "\n\nPress Enter to for menu"
+puts '██████╗ ██╗   ██╗██████╗ ██╗   ██╗    '
+puts '██╔══██╗██║   ██║██╔══██╗╚██╗ ██╔╝    '
+puts '██████╔╝██║   ██║██████╔╝ ╚████╔╝     '
+puts '██╔══██╗██║   ██║██╔══██╗  ╚██╔╝      '
+puts '██║  ██║╚██████╔╝██████╔╝   ██║       '
+puts '╚═╝  ╚═╝ ╚═════╝ ╚═════╝    ╚═╝       '
+puts
+puts
+puts '██████╗  ██████╗ ██████╗  ██████╗ █████╗ ███████╗████████╗███████╗'
+puts '██╔══██╗██╔═══██╗██╔══██╗██╔════╝██╔══██╗██╔════╝╚══██╔══╝██╔════╝'
+puts '██████╔╝██║   ██║██║  ██║██║     ███████║███████╗   ██║   ███████╗'
+puts '██╔═══╝ ██║   ██║██║  ██║██║     ██╔══██║╚════██║   ██║   ╚════██║'
+puts '██║     ╚██████╔╝██████╔╝╚██████╗██║  ██║███████║   ██║   ███████║'
+puts '╚═╝      ╚═════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚══════╝'
+puts
 podcast_list = Pods.new
 
 begin
-  system('clear')
+  loop do
+  # system('clear')
   puts 'Welcome to Ruby Podcasts'
-  puts '1 - Podcast List Options'
-  puts '2 - Fetch Latest Podcasts'
+  puts '1 - Fetch Latest Podcasts'
+  puts '2 - Podcast List Operations'
   puts 'q - Quit'
   input_opt = gets.chomp
   raise unless input_opt.include?('1') || input_opt.include?('2') || input_opt.include?('q')
   case input_opt
-  when '1'
+  when '2'
     system('clear')
     loop do
       puts 's - See available podcasts'
@@ -32,25 +42,28 @@ begin
       input_opt = gets.chomp
       case input_opt
       when 's'
-        podcast_list.pod_links.each{|podcast| puts podcast}
+        podcast_list.pod_links.each{|podcast| puts podcast.content}
         next
       when 'a'
         puts "Please enter the rss url that you would like to add to podcast list :"
         pod_url = gets.chomp
         podcast_list.add_pod(pod_url)
-        next
+        break
       when 'd'
         podcast_list.pod_links.each{|podcast| puts podcast}
         puts "Please enter the rss url that you would like to delete from podcast list :"
         pod_url = gets.chomp
-        podcast_list.remove_pod(url)
-        next
+        podcast_list.remove_pod(pod_url)
+        break
+      when 'q'
+        system('clear')
+        break
       else
         puts "Invalid Input"
+        next
       end
-      break if input_opt == 'q'
     end
-  when '2'
+  when '1'
     bar = ProgressBar.new(podcast_list.pod_links.length)
     system('clear')
     puts "How many results would you like to fetch from each podcast ? (Default #2)"
@@ -68,8 +81,10 @@ begin
     system('clear')
     puts "Your results created in result.html file."
     puts "Please open results.html with your browser."
-    end
-
+    break
+  when 'q' then  break
+  end
+  end
 rescue StandardError
   retry
 end

@@ -33,5 +33,4 @@ class Pods
     end
     puts 'Wrong URL'
   end
-
 end
