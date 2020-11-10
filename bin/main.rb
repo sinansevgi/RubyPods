@@ -23,9 +23,7 @@ puts '╚═╝      ╚═════╝ ╚═════╝  ╚═══�
 puts
 podcast_list = Pods.new
 
-# begin
   loop do
-  # system('clear')
   puts 'Welcome to Ruby Podcasts'
   puts '1 - Fetch Latest Podcasts'
   puts '2 - Podcast List Operations'
@@ -87,8 +85,6 @@ podcast_list = Pods.new
   else puts 'Please enter valid option'
   end
   end
-# rescue StandardError
-#   retry
-# end
+
 
 
