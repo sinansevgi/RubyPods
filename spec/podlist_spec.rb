@@ -21,6 +21,9 @@ describe 'Pods' do
       expect(pod_list.pod_links[-1].content).to eql('https://testuri.com')
       pod_list.remove_pod('https://testuri.com')
     end
+    it "It shouldn't add item to list" do
+      expect(pod_list.add_pod(' ')).to eql(false)
+    end
   end
   describe 'Pods#remove' do
     it 'Remove given item from list' do
@@ -28,6 +31,10 @@ describe 'Pods' do
       pod_list = Pods.new('./assets/test.xml')
       expect(pod_list.pod_links[-1].content).to eql('https://feeds.transistor.fm/remote-ruby')
       pod_list.add_pod('https://feeds.fireside.fm/bikeshed/rss')
+    end
+    it "It shouldn't remove an item from list" do
+      pod_list.remove_pod('https://testuri.com')
+      expect(pod_list.pod_links.length).to eql(3)
     end
   end
 end

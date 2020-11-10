@@ -2,13 +2,12 @@ require 'nokogiri'
 
 class Pods
   attr_accessor :pod_links
-  def initialize(file_link = '../assets/pods.xml')
+  def initialize(file_link = './assets/pods.xml')
     @file_link = file_link
     @pod_list = File.open(@file_link) { |f| Nokogiri::XML(f) }
     @pod_links = @pod_list.css('link')
   end
 
-  # @return [Podcast List]
   def list_pods
     @result = []
     @pod_links.each do |link|
@@ -18,6 +17,8 @@ class Pods
   end
 
   def add_pod(url)
+    return false if url.nil? || url == ' '
+
     @pod_link = Nokogiri::XML::Node.new 'link', @pod_list
     @pod_link.content = url
     @pod_links[-1].add_next_sibling(@pod_link)

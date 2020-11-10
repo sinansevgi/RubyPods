@@ -15,9 +15,19 @@ describe 'Feed' do
       expect(feed.result_titles.length).to eql(10)
     end
   end
+  describe 'Feed#fetch_titles fails' do
+    it 'Should throw an error if method accessed' do
+      expect { feed.fetch_titles }.to raise_error(NoMethodError, /private/)
+    end
+  end
   describe 'Feed#fetch_links' do
     it 'Fetches the episode links' do
       expect(feed.result_links.length).to eql(10)
+    end
+  end
+  describe 'Feed#fetch_links fails' do
+    it 'Should throw an error if method accessed' do
+      expect { feed.fetch_links }.to raise_error(NoMethodError, /private/)
     end
   end
 end

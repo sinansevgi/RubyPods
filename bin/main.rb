@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+#
 require_relative '../libs/podscraper'
 require_relative '../libs/podlist'
 require_relative '../libs/pageupdater'
@@ -22,7 +23,7 @@ puts '╚═╝      ╚═════╝ ╚═════╝  ╚═══�
 puts
 podcast_list = Pods.new
 
-begin
+# begin
   loop do
   # system('clear')
   puts 'Welcome to Ruby Podcasts'
@@ -86,8 +87,8 @@ begin
   else puts 'Please enter valid option'
   end
   end
-rescue StandardError
-  retry
-end
+# rescue StandardError
+#   retry
+# end
 
 

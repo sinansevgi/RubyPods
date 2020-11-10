@@ -2,10 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 
 class Feed
-  attr_reader :title
-  attr_reader :pod_image
-  attr_reader :result_titles
-  attr_reader :result_links
+  attr_reader :title, :pod_image, :result_links, :result_titles
   def initialize(url)
     @url = Nokogiri::XML(URI.open(url))
     @title = @url.css('title')[0].text
@@ -15,6 +12,8 @@ class Feed
     fetch_titles
     fetch_links
   end
+
+  private
 
   def fetch_titles
     @result_titles = []

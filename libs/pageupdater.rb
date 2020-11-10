@@ -10,6 +10,8 @@ class Pager
     @result_links = result_links
   end
 
+  private
+
   def block_init
     @block_child = Nokogiri::XML::Node.new 'div', @doc
     @block_child.set_attribute('class', 'media text-muted pt-3')
@@ -42,6 +44,8 @@ class Pager
     @block.add_child(@block_child)
     @block
   end
+
+  public
 
   def page_update(len = 2)
     update_time = @doc.at_css '.up'
