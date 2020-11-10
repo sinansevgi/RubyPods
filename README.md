@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Ruby Pods
 
 > This is an application that fetches the latest podcasts feeds
 >  from the web and creates an HTML file for listening to them.
