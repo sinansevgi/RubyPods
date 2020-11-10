@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>Ruby Rogues</title>
-    <image>
+    <image alt="Image">
       <link>http://rubyrogues.com</link>
       <url>https://s3.amazonaws.com/devchat.tv/ruby-rogues-thumb.jpg</url>
       <title>Ruby Rogues</title>

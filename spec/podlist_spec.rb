@@ -1,5 +1,7 @@
-require '../libs/podlist'
+require_relative '../libs/podlist'
+require 'nokogiri'
 # podlist.rb
+
 describe 'Pods' do
   let(:pod_list) { Pods.new('./assets/test.xml') }
   let(:test_list) do

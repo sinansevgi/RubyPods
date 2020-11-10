@@ -1,4 +1,6 @@
-require '../libs/podscraper'
+require_relative '../libs/podscraper'
+require 'nokogiri'
+require 'open-uri'
 # podscraper.rb
 
 describe 'Feed' do
