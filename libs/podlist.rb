@@ -2,8 +2,9 @@ require 'nokogiri'
 
 class Pods
   attr_accessor :pod_links
-  def initialize
-    @pod_list = File.open('../assets/pods.xml') { |f| Nokogiri::XML(f) }
+  def initialize(file_link = '../assets/pods.xml')
+    @file_link = file_link
+    @pod_list = File.open(@file_link) { |f| Nokogiri::XML(f) }
     @pod_links = @pod_list.css('link')
   end
 
@@ -20,7 +21,7 @@ class Pods
     @pod_link = Nokogiri::XML::Node.new 'link', @pod_list
     @pod_link.content = url
     @pod_links[-1].add_next_sibling(@pod_link)
-    File.write('./assets/pods.xml', @pod_list)
+    File.write(@file_link, @pod_list)
   end
 
   def remove_pod(url)
@@ -28,9 +29,8 @@ class Pods
       next unless link.content == url
 
       link.remove
-      File.write('./assets/pods.xml', @pod_list)
+      File.write(@file_link, @pod_list)
       break
     end
-    puts 'Wrong URL'
   end
 end
