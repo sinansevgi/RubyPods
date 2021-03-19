@@ -1,5 +1,3 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
 # Ruby Pods
 
 > This is an application that fetches the latest podcasts feeds
