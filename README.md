@@ -44,7 +44,6 @@ To get a local copy up and running follow these simple example steps.
 
 - GitHub: [@sinansevgi](https://github.com/sinansevgi)
 - LinkedIn: [@sinansevgi](https://www.linkedin.com/in/sinan-s-52559437/)
-- Twitter: [@nativeofcybers1](https://twitter.com/nativeofcybers1)
 
 ## 🤝 Contributing
 
