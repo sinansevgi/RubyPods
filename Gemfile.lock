@@ -2,9 +2,9 @@ GEM
   remote: https://rubygems.org/
   specs:
     highline (2.0.3)
-    mini_portile2 (2.5.1)
-    nokogiri (1.11.4)
-      mini_portile2 (~> 2.5.0)
+    mini_portile2 (2.6.1)
+    nokogiri (1.12.5)
+      mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     open-uri (0.1.0)
     options (2.3.2)
